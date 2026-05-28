@@ -20,7 +20,7 @@ export default function RotatingText({ texts, interval = 7000 }: RotatingTextPro
   }, [texts, interval]);
 
   return (
-    <span className="inline-block relative min-w-[600px] h-[40px] md:h-[50px] overflow-hidden vertical-align-middle text-2xl md:text-5xl">
+    <span className="inline-block relative min-w-[600px] h-[40px] md:h-[30px] overflow-hidden vertical-align-middle text-md md:text-lg">
       <AnimatePresence mode="wait">
         <motion.span
           key={index}
@@ -28,8 +28,8 @@ export default function RotatingText({ texts, interval = 7000 }: RotatingTextPro
           animate={{ y: "0%", opacity: 1 }}
           exit={{ y: "-100%", opacity: 0 }}
           transition={{ duration: 0.8, ease: "easeInOut" }}
-          className="absolute left-0 right-0 text-black font-bold"
-        >
+          className="absolute left-0 right-0 text-black font-medium"
+        > 
           {texts[index]}
         </motion.span>
       </AnimatePresence>

@@ -10,8 +10,8 @@ interface ProjectData {
     category: string;
     desc: string;
     tech: string[];
-    images: string[];   // Tambahan array gambar untuk cover & carousel modal
-    liveUrl?: string;   // Tambahan tautan live site proyek
+    images: string[];   
+    liveUrl?: string;   
 }
 
 interface FolderShowcaseProps {
@@ -21,10 +21,8 @@ interface FolderShowcaseProps {
 export default function FolderShowcase({ project }: FolderShowcaseProps) {
     const [isOpen, setIsOpen] = useState(false);
     const [currentImgIdx, setCurrentImgIdx] = useState(0);
-    // TAMBAHKAN STATE INI: Mengontrol posisi koordinat X dan Y teks nama proyek
     const [mousePos, setMousePos] = useState({ x: 0, y: 0 });
 
-    // Fungsi navigasi carousel di dalam modal
     const nextImage = (e: React.MouseEvent) => {
         e.stopPropagation();
         setCurrentImgIdx((prev) => (prev === project.images.length - 1 ? 0 : prev + 1));
@@ -37,17 +35,15 @@ export default function FolderShowcase({ project }: FolderShowcaseProps) {
 
     return (
         <>
-            {/* ─── KARTU UTAMA BERBASIS GAMBAR (GRID VIEW) ─── */}
             <motion.div
                 whileHover={{ y: -6 }}
                 onClick={() => {
-                    setCurrentImgIdx(0); // Reset index gambar saat modal dibuka
+                    setCurrentImgIdx(0); 
                     setIsOpen(true);
                 }}
                 className="w-full text-left bg-white rounded-2xl overflow-hidden shadow-[0_2px_8px_rgba(0,0,0,0.02)] transition-all duration-300 cursor-pointer group flex flex-col"
             >
-                {/* ─── KONTEN GAMBAR DENGAN TILTED CARD & MOUSE-TRACKING TITLE ─── */}
-                <div className="relative aspect-[16/10] w-full overflow-hidden bg-neutral-100 border-b border-neutral-100 rounded-2xl">
+                <div className="relative w-full overflow-hidden bg-neutral-100 border-b border-neutral-100 rounded-2xl">
                     <motion.div
                         className="w-full h-full relative"
                         style={{ perspective: 1000 }}
@@ -57,12 +53,10 @@ export default function FolderShowcase({ project }: FolderShowcaseProps) {
                             const width = rect.width;
                             const height = rect.height;
 
-                            // 1. Hitung posisi kursor relatif terhadap titik tengah untuk Efek Tilt 3D
                             const xTilt = e.clientX - rect.left - width / 2;
                             const yTilt = e.clientY - rect.top - height / 2;
                             el.style.transform = `rotateY(${(xTilt / width) * 14}deg) rotateX(${-(yTilt / height) * 14}deg) scale(1.02)`;
 
-                            // 2. Hitung posisi kursor murni dari pojok kiri atas gambar (0 sampai lebar/tinggi) untuk Teks Mengikuti Kursor
                             const xPos = e.clientX - rect.left;
                             const yPos = e.clientY - rect.top;
                             setMousePos({ x: xPos, y: yPos });
@@ -72,30 +66,28 @@ export default function FolderShowcase({ project }: FolderShowcaseProps) {
                             el.style.transform = "rotateY(0deg) rotateX(0deg) scale(1)";
                         }}
                     >
-                        {/* Gambar Utama Proyek */}
+
                         <img
                             src={project.images[0]}
                             alt={project.title}
                             className="w-full h-full object-cover transition-transform duration-300 pointer-events-none"
                         />
 
-                        {/* Lapisan Gradien Gelap & Blur Bagian Bawah */}
                         <div
                             className="absolute bottom-0 inset-x-0 h-1/2 bg-gradient-to-t pointer-events-none z-10"
                             style={{
                                 maskImage: 'linear-gradient(to top, black 20%, transparent 100%)',
                                 WebkitMaskImage: 'linear-gradient(to top, black 20%, transparent 100%)'
                             }}
-                        />
+                        />  
 
-                        {/* PERBAIKAN UTAMA: Teks Label yang Bergerak Mengikuti Kursor (React Bits Style) */}
                         <div
                             className="absolute opacity-0 group-hover:opacity-100 transition-opacity duration-200 z-20 pointer-events-none whitespace-nowrap"
                             style={{
                                 left: mousePos.x,
                                 top: mousePos.y,
-                                transform: "translate(-50%, -50%) translateZ(40px)", // Mengunci posisi tengah kursor & memberi efek timbul 3D
-                                transition: "opacity 0.2s ease, transform 0.05s ease-out", // Membuat pergerakan teks terasa kenyal halus
+                                transform: "translate(-50%, -50%) translateZ(40px)", 
+                                transition: "opacity 0.2s ease, transform 0.05s ease-out", 
                             }}
                         >
                             <div className="bg-white/95 backdrop-blur-md px-3 py-1.5 rounded-lg border border-white/50 shadow-[0_8px_24px_rgba(0,0,0,0.15)]">

@@ -1,7 +1,7 @@
 // src/components/react-bits/DockNav.tsx
 "use client";
 
-import React, { useRef, useState, useEffect } from "react"; // Tambahkan useState & useEffect
+import React, { useRef, useState, useEffect } from "react";
 import { motion, useMotionValue, useTransform, useSpring } from "framer-motion";
 import { cn } from "@/src/lib/utils";
 
@@ -14,12 +14,27 @@ export default function DockNav({ items, className }: DockNavProps) {
   const mouseX = useMotionValue(Infinity);
   const [mounted, setMounted] = useState(false);
 
-  // Pastikan komponen telah ter-mount sempurna di client sebelum render elemen responsive
   useEffect(() => {
     setMounted(true);
   }, []);
 
-  // Jika belum mounted, kembalikan nav kosong dengan struktur minimal agar server & client sinkron
+  // Handler fungsi untuk eksekusi smooth scroll melewati batas offset atas navbar
+  const handleNavClick = (e: React.MouseEvent<HTMLAnchorElement>, href: string) => {
+    // Jalankan fungsi kustom hanya untuk jangkar internal halaman (#)
+    if (href.startsWith("#")) {
+      e.preventDefault();
+      const targetId = href.replace("#", "");
+      const targetElement = document.getElementById(targetId);
+      
+      if (targetElement) {
+        targetElement.scrollIntoView({
+          behavior: "smooth",
+          block: "start",
+        });
+      }
+    }
+  };
+
   if (!mounted) {
     return (
       <div className="fixed top-4 left-0 right-0 z-50 flex justify-center px-4 pointer-events-none mt-4">
@@ -50,7 +65,8 @@ export default function DockNav({ items, className }: DockNavProps) {
               <a
                 key={idx}
                 href={item.href}
-                className="flex items-center justify-center h-10 rounded-full hover:bg-neutral-50 border border-transparent hover:border-neutral-200/50 transition-all duration-200 px-2"
+                onClick={(e) => handleNavClick(e, item.href)}
+                className="flex items-center justify-center h-10 rounded-full hover:bg-neutral-50 border border-transparent hover:border-neutral-200/50 transition-all duration-300 ease-[cubic-bezier(0.16,1,0.3,1)] px-2 hover:scale-[1.03]"
               >
                 {item.icon}
               </a>
@@ -58,7 +74,13 @@ export default function DockNav({ items, className }: DockNavProps) {
           }
 
           return (
-            <DockIcon key={idx} href={item.href} mouseX={mouseX} label={item.label}>
+            <DockIcon 
+              key={idx} 
+              href={item.href} 
+              mouseX={mouseX} 
+              label={item.label}
+              onClick={(e) => handleNavClick(e, item.href)}
+            >
               {item.icon}
             </DockIcon>
           );
@@ -73,11 +95,13 @@ function DockIcon({
   mouseX,
   label,
   children,
+  onClick,
 }: {
   href: string;
   mouseX: any;
   label: string;
   children: React.ReactNode;
+  onClick: (e: React.MouseEvent<HTMLAnchorElement>) => void;
 }) {
   const ref = useRef<HTMLAnchorElement>(null);
   const distance = useTransform(mouseX, (val: number) => {
@@ -94,14 +118,15 @@ function DockIcon({
     <motion.a
       ref={ref}
       href={href}
+      onClick={onClick}
       style={{ width, height }}
-      className="relative group flex items-center justify-center rounded-4xl text-neutral-500 hover:text-black hover:bg-neutral-50 border border-transparent hover:border-neutral-200/50 transition-colors"
+      className="relative group flex items-center justify-center rounded-4xl text-neutral-500 hover:text-black hover:bg-neutral-50 border border-transparent hover:border-neutral-200/50 transition-colors duration-300"
     >
-      <span className="absolute -bottom-8 scale-0 group-hover:scale-100 opacity-0 group-hover:opacity-100 transition-all duration-200 text-[10px] font-mono font-bold tracking-wider uppercase bg-black text-white px-2 py-0.5 rounded-md shadow-sm pointer-events-none whitespace-nowrap z-30">
+      <span className="absolute -bottom-8 scale-0 group-hover:scale-100 opacity-0 group-hover:opacity-100 transition-all duration-300 ease-[cubic-bezier(0.16,1,0.3,1)] text-[10px] font-mono font-bold tracking-wider uppercase bg-black text-white px-2 py-0.5 rounded-md shadow-sm pointer-events-none whitespace-nowrap z-30">
         {label}
       </span>
       
-      <div className="text-base flex items-center justify-center pointer-events-none">
+      <div className="text-base flex items-center justify-center pointer-events-none transition-transform duration-300 group-hover:scale-110">
         {children}
       </div>
     </motion.a>

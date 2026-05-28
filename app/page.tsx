@@ -52,7 +52,7 @@ const PROJECTS_DATA = [
     category: "Web Application / AI Dashboard",
     desc: "Dashboard cerdas berbasis kecerdasan buatan (AI) yang dirancang untuk membantu pelamar melacak, mengelola, dan mengoptimalkan status pengiriman lamaran pekerjaan mereka secara efisien.",
     tech: ["Next.js"],
-    images: ["https://images.unsplash.com/photo-1460925895917-afdab827c52f?q=80&w=800", "https://images.unsplash.com/photo-1551288049-bebda4e38f71?q=80&w=800"],
+    images: ["/Jobtrack.png", "https://images.unsplash.com/photo-1551288049-bebda4e38f71?q=80&w=800"],
     liveUrl: "https://jobtrackr-dusky.vercel.app/"
   },
   {
@@ -60,19 +60,19 @@ const PROJECTS_DATA = [
     category: "Web Application / AI Dashboard",
     desc: "Dashboard cerdas berbasis kecerdasan buatan (AI) yang dirancang untuk membantu pelamar melacak, mengelola, dan mengoptimalkan status pengiriman lamaran pekerjaan mereka secara efisien.",
     tech: ["Next.js"],
-    images: ["https://images.unsplash.com/photo-1460925895917-afdab827c52f?q=80&w=800", "https://images.unsplash.com/photo-1551288049-bebda4e38f71?q=80&w=800"],
+    images: ["/PdfCraft.png", "https://images.unsplash.com/photo-1551288049-bebda4e38f71?q=80&w=800"],
     liveUrl: "https://jobtrackr.example.com"
   },
   {
-    title: "JobTrackr",
+    title: "Jabarin",
     category: "Web Application / AI Dashboard",
     desc: "Dashboard cerdas berbasis kecerdasan buatan (AI) yang dirancang untuk membantu pelamar melacak, mengelola, dan mengoptimalkan status pengiriman lamaran pekerjaan mereka secara efisien.",
     tech: ["Next.js"],
-    images: ["https://images.unsplash.com/photo-1460925895917-afdab827c52f?q=80&w=800", "https://images.unsplash.com/photo-1551288049-bebda4e38f71?q=80&w=800"],
+    images: ["/Jabarin.png", "https://images.unsplash.com/photo-1551288049-bebda4e38f71?q=80&w=800"],
     liveUrl: "https://jobtrackr.example.com"
   },
   {
-    title: "JobTrackr",
+    title: "StockHub",
     category: "Web Application / AI Dashboard",
     desc: "Dashboard cerdas berbasis kecerdasan buatan (AI) yang dirancang untuk membantu pelamar melacak, mengelola, dan mengoptimalkan status pengiriman lamaran pekerjaan mereka secara efisien.",
     tech: ["Next.js"],
