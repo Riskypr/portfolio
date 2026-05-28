@@ -99,7 +99,7 @@ export default function FolderShowcase({ project }: FolderShowcaseProps) {
                             }}
                         >
                             <div className="bg-white/95 backdrop-blur-md px-3 py-1.5 rounded-lg border border-white/50 shadow-[0_8px_24px_rgba(0,0,0,0.15)]">
-                                <p className="text-[10px] font-mono font-bold uppercase tracking-wider text-black">
+                                <p className="text-[10px] font-bold uppercase tracking-wider text-black">
                                     {project.title}
                                 </p>
                             </div>
@@ -114,13 +114,13 @@ export default function FolderShowcase({ project }: FolderShowcaseProps) {
                         <h3 className="text-base font-medium text-black tracking-tight leading-tight">
                             {project.title}
                         </h3>
-                        <p className="text-[11px] font-mono text-neutral-400 truncate">
+                        <p className="text-[11px] text-neutral-400 truncate">
                             {project.tech.join(" • ")}
                         </p>
                     </div>
 
                     {/* Bagian Kanan Bawah: Tombol Aksi Pemicu Modal */}
-                    <div className="flex items-center gap-1 shrink-0 text-xs font-mono font-medium tracking-wider text-neutral-400 group-hover:text-black transition-colors duration-200 pb-0.5">
+                    <div className="flex items-center gap-1 shrink-0 text-xs font-medium tracking-wider text-neutral-400 group-hover:text-black transition-colors duration-200 pb-0.5">
                         <span>View Project</span>
                         <ArrowUpRight className="w-3.5 h-3.5 group-hover:translate-x-0.5 group-hover:-translate-y-0.5 transition-transform duration-200" />
                     </div>
@@ -202,7 +202,7 @@ export default function FolderShowcase({ project }: FolderShowcaseProps) {
                             {/* 2. SEGMEN DETAIL INFORMASI PROYEK (Bawah Modal) */}
                             <div className="p-6 flex flex-col gap-5 text-left">
                                 <div>
-                                    <span className="text-[10px] uppercase font-mono tracking-widest text-neutral-400 block mb-1">
+                                    <span className="text-[10px] uppercase tracking-widest text-neutral-400 block mb-1">
                                         {project.category}
                                     </span>
                                     <h4 className="text-xl font-black text-black tracking-tight">
@@ -217,7 +217,7 @@ export default function FolderShowcase({ project }: FolderShowcaseProps) {
 
                                 {/* Bahasa Pemrograman & Framework */}
                                 <div>
-                                    <div className="flex items-center gap-1.5 text-neutral-400 font-mono text-[10px] uppercase tracking-wider mb-2.5">
+                                    <div className="flex items-center gap-1.5 text-neutral-400 text-[10px] uppercase tracking-wider mb-2.5">
                                         <Code className="w-3.5 h-3.5" />
                                         <span>Teknologi Yang Digunakan</span>
                                     </div>
@@ -225,7 +225,7 @@ export default function FolderShowcase({ project }: FolderShowcaseProps) {
                                         {project.tech.map((techItem, index) => (
                                             <span
                                                 key={index}
-                                                className="text-[10px] font-mono font-medium px-2.5 py-1 bg-neutral-50 text-neutral-800 border border-neutral-200/60 rounded-md"
+                                                className="text-[10px] font-medium px-2.5 py-1 bg-neutral-50 text-neutral-800 border border-neutral-200/60 rounded-md"
                                             >
                                                 {techItem}
                                             </span>
@@ -237,7 +237,7 @@ export default function FolderShowcase({ project }: FolderShowcaseProps) {
                                 <div className="flex gap-3 mt-2 border-t border-neutral-100 pt-4">
                                     <button
                                         onClick={() => setIsOpen(false)}
-                                        className="flex-1 py-2.5 px-4 rounded-xl border border-neutral-200 text-xs font-mono font-bold uppercase tracking-wider text-neutral-500 hover:text-black hover:bg-neutral-50 transition-colors text-center"
+                                        className="flex-1 py-2.5 px-4 rounded-xl border border-neutral-200 text-xs font-bold uppercase tracking-wider text-neutral-500 hover:text-black hover:bg-neutral-50 transition-colors text-center"
                                     >
                                         Tutup
                                     </button>
@@ -245,7 +245,7 @@ export default function FolderShowcase({ project }: FolderShowcaseProps) {
                                         href={project.liveUrl || "#"}
                                         target="_blank"
                                         rel="noopener noreferrer"
-                                        className="flex-1 py-2.5 px-4 rounded-xl bg-black text-xs font-mono font-bold uppercase tracking-wider text-white hover:bg-neutral-800 transition-colors flex items-center justify-center gap-1.5 group"
+                                        className="flex-1 py-2.5 px-4 rounded-xl bg-black text-xs font-bold uppercase tracking-wider text-white hover:bg-neutral-800 transition-colors flex items-center justify-center gap-1.5 group"
                                     >
                                         <span>View Live Site</span>
                                         <ArrowUpRight className="w-3.5 h-3.5 group-hover:translate-x-0.5 group-hover:-translate-y-0.5 transition-transform" />
