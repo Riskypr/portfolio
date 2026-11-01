@@ -1,4 +1,3 @@
-// src/components/react-bits/ScrollReveal.tsx
 "use client";
 
 import { useRef, useEffect, useState } from "react";
@@ -11,7 +10,6 @@ interface ScrollRevealProps {
   enableBlur?: boolean;
   disableOpacity?: boolean;
   
-  // Amplitudo Transformasi Fisik
   yOffset?: number;
   xOffset?: number;
   scale?: number;
@@ -76,7 +74,7 @@ export default function ScrollReveal({
     },
   };
 
-  // Kita gunakan Type Assertion tegas agar TypeScript tidak menebak format string objek transisi
+ 
   const currentTransition = isInView 
     ? {
         duration: duration,
@@ -94,7 +92,6 @@ export default function ScrollReveal({
       initial="hidden"
       animate={isInView ? "visible" : "hidden"}
       variants={variants}
-      // SOLUSI: Menggunakan 'as any' di sini memotong semua kerumitan deteksi tipe internal Framer Motion yang bervariasi antar versi
       transition={currentTransition as any} 
       className={className}
       style={{
