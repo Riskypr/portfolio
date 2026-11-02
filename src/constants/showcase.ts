@@ -1,5 +1,5 @@
 export const SHOWCASE_IMAGES = [
-    "/Jobtrack.png",
-    "/stockHUB.png",
-    "/Jabarin.png",
+    "/project-placeholder-dark.svg",
+    "/project-placeholder-charcoal.svg",
+    "/project-placeholder.svg",
 ];

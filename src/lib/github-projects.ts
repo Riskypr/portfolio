@@ -19,7 +19,11 @@ interface GithubRepository {
   archived: boolean;
 }
 
-const PLACEHOLDER_IMAGE = "/project-placeholder.svg";
+const PLACEHOLDER_IMAGES = [
+  "/project-placeholder.svg",
+  "/project-placeholder-dark.svg",
+  "/project-placeholder-charcoal.svg",
+];
 
 export async function getGithubProjects(): Promise<GithubProject[]> {
   try {
@@ -40,7 +44,7 @@ export async function getGithubProjects(): Promise<GithubProject[]> {
       if (currentPage.length < 100) break;
     }
 
-    return repositories.map((repo) => ({
+    return repositories.map((repo, index) => ({
       title: repo.name.replace(/[-_]/g, " "),
       category: [repo.fork ? "Fork" : "Repository", repo.archived ? "Archived" : ""]
         .filter(Boolean)
@@ -49,7 +53,7 @@ export async function getGithubProjects(): Promise<GithubProject[]> {
       tech: [repo.language, ...repo.topics].filter(
         (value): value is string => Boolean(value),
       ),
-      images: [PLACEHOLDER_IMAGE],
+      images: [PLACEHOLDER_IMAGES[index % PLACEHOLDER_IMAGES.length]],
       liveUrl: repo.homepage?.trim() || null,
       repoUrl: repo.html_url,
     }));
