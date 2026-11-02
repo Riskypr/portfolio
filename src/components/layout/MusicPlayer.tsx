@@ -1,7 +1,7 @@
 "use client";
 
 import { useEffect, useRef, useState } from "react";
-import { Disc3, Pause, Play } from "lucide-react";
+import { Disc3, Eye, EyeOff, Pause, Play } from "lucide-react";
 
 const TRACK_URL = "/play.m4a";
 const LYRICS_URL = "/Bleachers%20-%20Merry%20Christmas%2C%20Please%20Don%27t%20Call.lrc";
@@ -28,6 +28,7 @@ function parseLyrics(lrc: string): LyricLine[] {
 export default function MusicPlayer() {
     const audioRef = useRef<HTMLAudioElement>(null);
     const [isPlaying, setIsPlaying] = useState(false);
+    const [showLyrics, setShowLyrics] = useState(true);
     const [currentTime, setCurrentTime] = useState(0);
     const [lyrics, setLyrics] = useState<LyricLine[]>([]);
 
@@ -68,7 +69,7 @@ export default function MusicPlayer() {
     };
 
     return (
-        <div className="fixed bottom-5 right-5 z-[60] sm:bottom-7 sm:right-7">
+        <div className="fixed bottom-5 right-5 z-[60] flex w-max max-w-[calc(100vw-2.5rem)] flex-col items-end sm:bottom-7 sm:right-7">
             <audio
                 ref={audioRef}
                 src={TRACK_URL}
@@ -82,7 +83,7 @@ export default function MusicPlayer() {
                 onEnded={() => setCurrentTime(0)}
             />
 
-            {isPlaying && activeLyric && (
+            {isPlaying && showLyrics && activeLyric && (
                 <div
                     key={`${activeLyric.time}-${activeLyric.text}`}
                     aria-live="polite"
@@ -101,24 +102,37 @@ export default function MusicPlayer() {
                 </div>
             )}
 
-            <button
-                type="button"
-                onClick={togglePlayback}
-                aria-label={isPlaying ? "Pause music" : "Play music"}
-                aria-pressed={isPlaying}
-                className="group flex items-center gap-3 rounded-full border border-neutral-200/80 bg-white/90 py-2.5 pl-3 pr-4 text-left shadow-[0_8px_30px_rgba(0,0,0,0.10)] backdrop-blur-xl transition-all duration-300 hover:-translate-y-0.5 hover:border-neutral-300 hover:shadow-[0_12px_36px_rgba(0,0,0,0.14)] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-neutral-400 focus-visible:ring-offset-2"
-            >
-                <span className="flex size-9 shrink-0 items-center justify-center rounded-full bg-neutral-950 text-white transition-transform duration-300 group-hover:scale-105">
-                    {isPlaying ? <Pause className="size-4 fill-current" /> : <Play className="ml-0.5 size-4 fill-current" />}
-                </span>
-                <span className="min-w-[88px]">
-                    <span className="flex items-center gap-1.5 text-[11px] font-semibold tracking-wide text-neutral-900">
-                        {isPlaying ? "NOW PLAYING" : "PLAY MUSIC"}
-                        {isPlaying && <Disc3 className="size-3 animate-spin text-neutral-400" style={{ animationDuration: "4s" }} />}
+            <div className="flex items-center gap-2">
+                <button
+                    type="button"
+                    onClick={() => setShowLyrics((visible) => !visible)}
+                    aria-label={showLyrics ? "Hide lyrics" : "Show lyrics"}
+                    aria-pressed={showLyrics}
+                    title={showLyrics ? "Hide lyrics" : "Show lyrics"}
+                    className="flex size-10 shrink-0 items-center justify-center rounded-full border border-neutral-200/80 bg-white/90 text-neutral-600 shadow-[0_8px_30px_rgba(0,0,0,0.10)] backdrop-blur-xl transition-all duration-200 hover:border-neutral-300 hover:text-neutral-950 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-neutral-400 focus-visible:ring-offset-2"
+                >
+                    {showLyrics ? <Eye className="size-4" /> : <EyeOff className="size-4" />}
+                </button>
+
+                <button
+                    type="button"
+                    onClick={togglePlayback}
+                    aria-label={isPlaying ? "Pause music" : "Play music"}
+                    aria-pressed={isPlaying}
+                    className="group flex w-[184px] shrink-0 items-center gap-3 rounded-full border border-neutral-200/80 bg-white/90 py-2.5 pl-3 pr-4 text-left shadow-[0_8px_30px_rgba(0,0,0,0.10)] backdrop-blur-xl transition-all duration-300 hover:-translate-y-0.5 hover:border-neutral-300 hover:shadow-[0_12px_36px_rgba(0,0,0,0.14)] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-neutral-400 focus-visible:ring-offset-2"
+                >
+                    <span className="flex size-9 shrink-0 items-center justify-center rounded-full bg-neutral-950 text-white transition-transform duration-300 group-hover:scale-105">
+                        {isPlaying ? <Pause className="size-4 fill-current" /> : <Play className="ml-0.5 size-4 fill-current" />}
                     </span>
-                    <span className="mt-0.5 block text-[10px] text-neutral-400">Portfolio soundtrack</span>
-                </span>
-            </button>
+                    <span className="min-w-0 flex-1">
+                        <span className="flex items-center gap-1.5 text-[11px] font-semibold tracking-wide text-neutral-900">
+                            {isPlaying ? "NOW PLAYING" : "PLAY MUSIC"}
+                            {isPlaying && <Disc3 className="size-3 animate-spin text-neutral-400" style={{ animationDuration: "4s" }} />}
+                        </span>
+                        <span className="mt-0.5 block text-[10px] text-neutral-400">Portfolio soundtrack</span>
+                    </span>
+                </button>
+            </div>
         </div>
     );
 }
