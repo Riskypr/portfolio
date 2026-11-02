@@ -10,6 +10,7 @@ import GallerySection from "@/src/components/sections/GallerySection";
 
 import QuoteSection from "@/src/components/layout/QuoteSection";
 import Footer from "@/src/components/layout/Footer";
+import MusicPlayer from "@/src/components/layout/MusicPlayer";
 
 import { NAV_ITEMS } from "@/src/constants/navigation";
 import { PROJECTS_DATA } from "@/src/constants/projects";
@@ -41,6 +42,8 @@ export default function Home() {
             <GallerySection items={GALLERY_ITEMS} />
 
             <Footer />
+
+            <MusicPlayer />
         </main>
     );
 }

@@ -35,8 +35,8 @@ export default function ExpandableText({
                     className="mt-2 text-xs font-medium text-black hover:text-neutral-600 transition-colors cursor-pointer"
                 >
                     {expanded
-                        ? "Tampilkan lebih sedikit"
-                        : "Baca selengkapnya"}
+                        ? "Show less"
+                        : "Read more"}
                 </button>
             )}
         </div>

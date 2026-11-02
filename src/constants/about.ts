@@ -1,41 +1,33 @@
-import { FaGithub, FaLinkedin } from "react-icons/fa";
+﻿import { FaGithub, FaLinkedin } from "react-icons/fa";
 
 export const SOCIALS = [
-    {
-        name: "LinkedIn",
-        href: "https://www.linkedin.com/in/risky-prasetyo-905423256/",
-        icon: FaLinkedin,
-    },
-    {
-        name: "GitHub",
-        href: "https://github.com/Riskypr",
-        icon: FaGithub,
-    },
+    { name: "LinkedIn", href: "https://www.linkedin.com/in/risky-prasetyo-905423256/", icon: FaLinkedin },
+    { name: "GitHub", href: "https://github.com/Riskypr", icon: FaGithub },
 ];
 
 export const EXPERIENCES = [
     {
-        date: "Agt 2026 - Saat ini · 4 bln",
-        title: "Asisten Pranata Komputer",
-        company: "BPS Provinsi Kalimantan Tengah · Magang",
-        location: "Palangka Raya, Kalimantan Tengah · Di lokasi",
+        date: "Aug 2026 - Present · 4 mos",
+        title: "Computer Systems Administration Assistant",
+        company: "BPS Central Kalimantan Province · Internship",
+        location: "Palangka Raya, Central Kalimantan · On-site",
     },
     {
-        date: "Agt 2024 - Des 2024 · 5 bln",
+        date: "Aug 2024 - Dec 2024 · 5 mos",
         title: "Information Technology Intern",
-        company: "Dinas Komunikasi Informatika Persandian dan Statistik Provinsi Kalimantan Tengah · Magang",
-        location: "Palangka Raya, Kalimantan Tengah · Di lokasi",
+        company: "Central Kalimantan Provincial Office of Communication, Informatics, Encryption, and Statistics · Internship",
+        location: "Palangka Raya, Central Kalimantan · On-site",
     },
     {
-        date: "Feb 2024 - Jun 2024 · 5 bln",
-        title: "Front-End Web Dan Back-End",
+        date: "Feb 2024 - Jun 2024 · 5 mos",
+        title: "Frontend and Backend Web Development",
         company: "Dicoding Indonesia",
-        location: "Bandung, Jawa Barat, Indonesia · Jarak jauh",
+        location: "Bandung, West Java, Indonesia · Remote",
     },
     {
-        date: "Mar 2024 - Mei 2024 · 3 bln",
+        date: "Mar 2024 - May 2024 · 3 mos",
         title: "Computer Lab Assistant",
-        company: "Universitas Palangka Raya · Paruh Waktu",
-        location: "Palangka Raya, Kalimantan Tengah · Di lokasi",
+        company: "University of Palangka Raya · Part-time",
+        location: "Palangka Raya, Central Kalimantan · On-site",
     },
 ];

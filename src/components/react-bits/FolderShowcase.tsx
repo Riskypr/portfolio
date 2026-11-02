@@ -217,7 +217,7 @@ export default function FolderShowcase({ project }: FolderShowcaseProps) {
                                     {/* <div>
                                         <div className="flex items-center gap-1.5 text-neutral-400 text-[10px] uppercase tracking-wider mb-2.5">
                                             <Code className="w-3.5 h-3.5" />
-                                            <span>Teknologi Yang Digunakan</span>
+                                            <span>Technologies Used</span>
                                         </div>
                                         <div className="flex flex-wrap gap-1.5">
                                             {project.tech.map((techItem, index) => (

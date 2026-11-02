@@ -16,7 +16,7 @@ export default function Footer() {
                         Let&apos;s build something meaningful.
                     </h2>
                     <p className="mt-5 max-w-xl mx-auto text-neutral-400 leading-relaxed">
-                        Saya terbuka untuk berdiskusi tentang proyek, ide kreatif, dan peluang kolaborasi.
+                        I am open to discussing projects, creative ideas, and collaboration opportunities.
                     </p>
                 </div>
 
