@@ -1,18 +1,6 @@
 // src/app/layout.tsx
 import { Metadata } from "next";
-import localFont from "next/font/local";
-import { Plus_Jakarta_Sans } from "next/font/google"; // Contoh font body text bawaan kamu
 import "./globals.css";
-
-const calSans = localFont({
-  src: "../node_modules/cal-sans/fonts/webfonts/CalSans-SemiBold.woff2",
-  variable: "--font-cal-sans",
-});
-
-const plusJakartaSans = Plus_Jakarta_Sans({
-  subsets: ["latin"],
-  variable: "--font-sans",
-});
 
 export const metadata: Metadata = {
   title: "My Porto",
@@ -25,7 +13,15 @@ export default function RootLayout({
   children: React.ReactNode;
 }) {
   return (
-    <html lang="en" className={`${calSans.variable} ${plusJakartaSans.variable}`}>
+    <html lang="id" className="font-sans">
+      <head>
+        <link rel="preconnect" href="https://fonts.googleapis.com" />
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin="anonymous" />
+        <link
+          href="https://fonts.googleapis.com/css2?family=Google+Sans+Flex:opsz,wght@6..144,100..1000&display=swap"
+          rel="stylesheet"
+        />
+      </head>
       <body className="font-sans antialiased bg-white text-black">
         {children}
       </body>
