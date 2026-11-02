@@ -52,7 +52,7 @@ export default function HeroSection({ showcaseImages }: HeroSectionProps) {
       <div className="relative z-10 max-w-6xl w-full mx-auto grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-8 items-center pt-32 pb-12 flex-grow">
         <div className="lg:col-span-7 text-left flex flex-col justify-center">
           <p className="text-xs font-sans capitalize tracking-widest text-neutral-400 -mb-2">
-            <RotatingText texts={["Welcome!", "Hello there!", "Glad you're here!"]} />
+            <RotatingText texts={["Welcome!", "ようこそ!", "환영합니다!", "Bienvenue!"]} />
           </p>
 
           <h1 className="text-4xl md:text-6xl font-bold tracking-tight mb-6 leading-[1.1] overflow-hidden">
