@@ -43,8 +43,8 @@ export default async function ProjectsPage() {
                         </div>
                     </div>
                     <p className="mt-4 text-center text-neutral-500 max-w-xl mx-auto">
-                        Semua repository publik dari GitHub Riskypr, termasuk deskripsi,
-                        teknologi, dan tautan demo bila tersedia.
+                        All public repositories from Riskypr on GitHub, including descriptions,
+                        technologies, and demo links when available.
                     </p>
                 </div>
             </div>
@@ -52,7 +52,7 @@ export default async function ProjectsPage() {
                 <ProjectsSection projects={githubProjects} showTitle={false} showViewAll={false} />
             ) : (
                 <p className="max-w-2xl mx-auto px-6 py-16 text-center text-neutral-500">
-                    Daftar repository belum dapat dimuat. Silakan lihat langsung di{" "}
+                    The repository list could not be loaded. You can browse it directly on{" "}
                     <a className="underline text-black" href="https://github.com/Riskypr" target="_blank" rel="noopener noreferrer">
                         GitHub Riskypr
                     </a>.

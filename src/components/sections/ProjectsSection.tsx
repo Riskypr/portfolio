@@ -25,7 +25,7 @@ interface Project {
 
 export default function ProjectsSection({
   projects,
-  title = "Katalog Proyek",
+  title = "Project Showcase",
   showTitle = true,
   showViewAll = true,
 }: ProjectsSectionProps) {

@@ -1,8 +1,8 @@
-export const PROJECTS_DATA = [
+﻿export const PROJECTS_DATA = [
   {
     title: "JobTrackr",
     category: "Web Application / AI Dashboard",
-    desc: "JobTrackr adalah aplikasi modern untuk melacak lamaran kerja yang dikembangkan menggunakan Next.js, yang dirancang untuk membantu para pencari kerja mengelola peluang karier mereka secara efisien. Lacak lamaran, perbarui jadwal, pantau status, dan manfaatkan fitur-fitur yang didukung AI untuk mempermudah proses pencatatan lamaran kerja.",
+    desc: "JobTrackr is a modern job application tracker built with Next.js to help job seekers manage career opportunities efficiently. Track applications, update schedules, monitor statuses, and use AI-powered features to simplify your job search.",
     tech: ["Next.js"],
     images: ["/Jobtrack.png"],
     liveUrl: "https://jobtrackr-dusky.vercel.app/"
@@ -10,7 +10,7 @@ export const PROJECTS_DATA = [
   {
     title: "PdfCraft",
     category: "Web Application",
-    desc: "PDFCraft adalah alat berbasis web yang dirancang khusus untuk menggabungkan dokumen PDF secara instan tanpa mengorbankan privasi. Di dunia di mana data pribadi sering kali menjadi komoditas, kami hadir dengan pendekatan yang berbeda.",
+    desc: "PDFCraft is a web-based tool for merging PDF documents instantly while preserving your privacy. It offers a different approach in a world where personal data is often treated as a commodity.",
     tech: ["Next.js"],
     images: ["/PdfCraft.png"],
     liveUrl: "https://pdf-merger-beta-seven.vercel.app/"
@@ -18,7 +18,7 @@ export const PROJECTS_DATA = [
   {
     title: "Jabarin",
     category: "Web Application",
-    desc: "Proyek ini adalah aplikasi web layanan pengiriman berbasis Next.js yang saya kembangkan untuk mengasah kemampuan fullstack development. Aplikasi ini menyediakan fitur pemilihan lokasi melalui peta interaktif, perhitungan rute secara real-time, serta integrasi proses pembayaran yang user-friendly.",
+    desc: "A delivery service web app built with Next.js as a full-stack development project. It includes location selection with an interactive map, real-time route calculations, and a user-friendly payment flow.",
     tech: ["Next.js"],
     images: ["/Jabarin.png"],
     liveUrl: "https://web-jasa-antar-barang.vercel.app/"
@@ -26,7 +26,7 @@ export const PROJECTS_DATA = [
   {
     title: "StockHub",
     category: "Web Application / AI Dashboard",
-    desc: "Dashboard cerdas berbasis kecerdasan buatan (AI) yang dirancang untuk membantu pelamar melacak, mengelola, dan mengoptimalkan status pengiriman lamaran pekerjaan mereka secara efisien.",
+    desc: "An AI-powered dashboard designed to help applicants efficiently track, manage, and optimize the status of their job applications.",
     tech: ["Next.js"],
     images: ["/stockHUB.png"],
     liveUrl: "https://expedisi-inventory.vercel.app/"

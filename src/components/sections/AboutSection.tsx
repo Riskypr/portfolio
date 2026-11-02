@@ -1,4 +1,4 @@
-"use client";
+﻿"use client";
 
 import React, { useState } from "react";
 // import Layers from "@/components/Lanyard";
@@ -13,11 +13,11 @@ export default function AboutSection() {
         <section id="about" className="py-28 max-w-5xl mx-auto px-6 border-t border-neutral-100 scroll-mt-10">
             <div className="grid grid-cols-1 md:grid-cols-12 gap-12 items-start">
 
-                {/* Profil Sisi Kiri */}
+                {/* Left profile column */}
                 <div className="md:col-span-5 flex flex-col items-center md:items-start text-center md:text-left">
-                    <div className="relative w-full h-84 aspect-[4/5] max-w-[320px] mb-6 group overflow-hidden rounded-2xl border border-neutral-100 shadow-[0_4px_20px_rgba(0,0,0,0.02)]">
+                    <div className="relative w-full h-74 aspect-[4/5] max-w-[320px] mb-6 group overflow-hidden rounded-2xl border border-neutral-100 shadow-[0_4px_20px_rgba(0,0,0,0.02)]">
                         <img
-                            src="/aboutMe.jpg"
+                            src="/me.png"
                             alt="Risky Prasetyo"
                             className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-[1.02]"
                         />
@@ -43,7 +43,7 @@ export default function AboutSection() {
                     </div>
 
                     <h3 className="text-xl font-bold text-black tracking-tight uppercase">Risky Prasetyo</h3>
-                    <p className="text-xs font-semibold text-neutral-400 uppercase tracking-widest mt-1">Asisten Pranata Komputer Intern at BPS</p>
+                    <p className="text-xs font-semibold text-neutral-400 uppercase tracking-widest mt-1">Computer Systems Administration Assistant Intern at BPS</p>
                     <p className="text-[10px] font-medium text-neutral-400 uppercase tracking-widest mt-1 mb-8">Entry-Level Frontend Developer · AI & Web Development</p>
                     {/* Accordion History */}
                     <div className="w-full max-w-[320px] border-t border-b border-neutral-100 py-3 mt-4">
@@ -53,15 +53,15 @@ export default function AboutSection() {
                         >
                             <span className="flex items-center gap-2">
                                 <Briefcase className="w-3.5 h-3.5" />
-                                History Pengalaman
+                                Experience
                             </span>
-                            {/* Icon rotasi yang smooth */}
+                            {/* Smooth rotating icon */}
                             <ChevronDown
                                 className={`w-4 h-4 transform transition-transform duration-500 ease-[cubic-bezier(0.16,1,0.3,1)] ${showHistory ? "rotate-180" : "rotate-0"}`}
                             />
                         </button>
 
-                        {/* Konten dengan tinggi dinamis & fade-in smooth */}
+                        {/* Smooth height and fade transition */}
                         <div
                             className={`grid transition-all duration-500 ease-[cubic-bezier(0.16,1,0.3,1)] ${showHistory ? "grid-rows-[1fr] opacity-100 mt-4 pt-2 border-t border-neutral-50" : "grid-rows-[0fr] opacity-0"
                                 }`}
@@ -80,16 +80,16 @@ export default function AboutSection() {
                     </div>
                 </div>
 
-                {/* Informasi Sisi Kanan */}
+                {/* Right information column */}
                 <div className="md:col-span-7 space-y-12 pt-2">
                     <div className="space-y-4">
                         <div className="flex items-center gap-2.5 text-black">
                             <Compass className="w-4 h-4 shrink-0" />
-                            <h4 className="text-xs uppercase tracking-widest font-bold">Tentang Saya</h4>
+                            <h4 className="text-xs uppercase tracking-widest font-bold">About Me</h4>
                         </div>
                         <div className="pl-6 border-l border-neutral-100 space-y-2">
                             <p className="text-neutral-600 text-sm leading-relaxed">
-                                Lulusan Teknik Informatika Universitas Palangka Raya dan entry-level frontend developer dengan pengalaman menggunakan JavaScript dan PHP. Saat ini saya mengembangkan keterampilan di bidang kecerdasan buatan (AI) dan jaringan komputer, serta terbuka untuk peluang di pengembangan web dan bidang teknologi terkait.
+                                I hold a Computer Science degree from the University of Palangka Raya and am an entry-level frontend developer with experience in JavaScript and PHP. I am currently developing my skills in artificial intelligence (AI) and computer networking, and I am open to opportunities in web development and related technology fields.
                             </p>
                         </div>
                     </div>
@@ -100,3 +100,5 @@ export default function AboutSection() {
         </section>
     );
 }
+
+
