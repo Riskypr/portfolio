@@ -43,7 +43,7 @@ export default function AboutSection() {
                     </div>
 
                     <h3 className="text-xl font-bold text-black tracking-tight uppercase">Risky Prasetyo</h3>
-                    <p className="text-xs font-semibold text-neutral-400 uppercase tracking-widest mt-1">Computer Systems Administration Assistant Intern at BPS</p>
+                    {/* <p className="text-xs font-semibold text-neutral-400 uppercase tracking-widest mt-1">Computer Systems Administration Assistant Intern at BPS</p> */}
                     <p className="text-[10px] font-medium text-neutral-400 uppercase tracking-widest mt-1 mb-8">Entry-Level Frontend Developer · AI & Web Development</p>
                     {/* Accordion History */}
                     <div className="w-full max-w-[320px] border-t border-b border-neutral-100 py-3 mt-4">
@@ -91,6 +91,40 @@ export default function AboutSection() {
                             <p className="text-neutral-600 text-sm leading-relaxed">
                                 I hold a Computer Science degree from the University of Palangka Raya and am an entry-level frontend developer with experience in JavaScript and PHP. I am currently developing my skills in artificial intelligence (AI) and computer networking, and I am open to opportunities in web development and related technology fields.
                             </p>
+                        </div>
+                    </div>
+
+                    <div className="hidden lg:block rounded-2xl border border-neutral-200 bg-neutral-50/70 p-6">
+                        <div className="mb-6 flex items-end justify-between gap-6">
+                            <div>
+                                <p className="text-[10px] font-semibold uppercase tracking-[0.22em] text-neutral-400">
+                                    Developer snapshot
+                                </p>
+                                <h3 className="mt-2 text-lg font-semibold tracking-tight text-neutral-900">
+                                    What I&apos;m focused on
+                                </h3>
+                            </div>
+                            <span className="text-[10px] uppercase tracking-[0.18em] text-neutral-400">
+                                Current direction
+                            </span>
+                        </div>
+
+                        <div className="grid grid-cols-3 divide-x divide-neutral-200">
+                            <div className="pr-4">
+                                <span className="text-[10px] font-medium uppercase tracking-widest text-neutral-400">01 / Building</span>
+                                <h4 className="mt-3 text-sm font-semibold text-neutral-900">Web experiences</h4>
+                                <p className="mt-2 text-xs leading-relaxed text-neutral-500">Developing clean, useful interfaces with JavaScript, Next.js, and PHP.</p>
+                            </div>
+                            <div className="px-4">
+                                <span className="text-[10px] font-medium uppercase tracking-widest text-neutral-400">02 / Exploring</span>
+                                <h4 className="mt-3 text-sm font-semibold text-neutral-900">Artificial intelligence</h4>
+                                <p className="mt-2 text-xs leading-relaxed text-neutral-500">Learning to bring practical AI features into everyday web applications.</p>
+                            </div>
+                            <div className="pl-4">
+                                <span className="text-[10px] font-medium uppercase tracking-widest text-neutral-400">03 / Strengthening</span>
+                                <h4 className="mt-3 text-sm font-semibold text-neutral-900">Systems & networking</h4>
+                                <p className="mt-2 text-xs leading-relaxed text-neutral-500">Growing my knowledge of computer systems and network fundamentals.</p>
+                            </div>
                         </div>
                     </div>
 
