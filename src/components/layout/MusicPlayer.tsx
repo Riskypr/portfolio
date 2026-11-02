@@ -103,28 +103,34 @@ export default function MusicPlayer() {
             )}
 
             <div className="flex items-center gap-2">
-                <button
-                    type="button"
-                    onClick={() => setShowLyrics((visible) => !visible)}
-                    aria-label={showLyrics ? "Hide lyrics" : "Show lyrics"}
-                    aria-pressed={showLyrics}
-                    title={showLyrics ? "Hide lyrics" : "Show lyrics"}
-                    className="flex size-10 shrink-0 items-center justify-center rounded-full border border-neutral-200/80 bg-white/90 text-neutral-600 shadow-[0_8px_30px_rgba(0,0,0,0.10)] backdrop-blur-xl transition-all duration-200 hover:border-neutral-300 hover:text-neutral-950 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-neutral-400 focus-visible:ring-offset-2"
-                >
-                    {showLyrics ? <Eye className="size-4" /> : <EyeOff className="size-4" />}
-                </button>
+                {isPlaying && (
+                    <button
+                        type="button"
+                        onClick={() => setShowLyrics((visible) => !visible)}
+                        aria-label={showLyrics ? "Hide lyrics" : "Show lyrics"}
+                        aria-pressed={showLyrics}
+                        title={showLyrics ? "Hide lyrics" : "Show lyrics"}
+                        className="flex size-10 shrink-0 items-center justify-center rounded-full border border-neutral-200/80 bg-white/90 text-neutral-600 shadow-[0_8px_30px_rgba(0,0,0,0.10)] backdrop-blur-xl transition-all duration-200 hover:border-neutral-300 hover:text-neutral-950 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-neutral-400 focus-visible:ring-offset-2"
+                    >
+                        {showLyrics ? <Eye className="size-4" /> : <EyeOff className="size-4" />}
+                    </button>
+                )}
 
                 <button
                     type="button"
                     onClick={togglePlayback}
                     aria-label={isPlaying ? "Pause music" : "Play music"}
                     aria-pressed={isPlaying}
-                    className="group flex w-[184px] shrink-0 items-center gap-3 rounded-full border border-neutral-200/80 bg-white/90 py-2.5 pl-3 pr-4 text-left shadow-[0_8px_30px_rgba(0,0,0,0.10)] backdrop-blur-xl transition-all duration-300 hover:-translate-y-0.5 hover:border-neutral-300 hover:shadow-[0_12px_36px_rgba(0,0,0,0.14)] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-neutral-400 focus-visible:ring-offset-2"
+                    className={`group flex shrink-0 items-center gap-3 rounded-full border border-neutral-200/80 bg-white/90 text-left shadow-[0_8px_30px_rgba(0,0,0,0.10)] backdrop-blur-xl transition-all duration-300 hover:-translate-y-0.5 hover:border-neutral-300 hover:shadow-[0_12px_36px_rgba(0,0,0,0.14)] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-neutral-400 focus-visible:ring-offset-2 ${
+                        isPlaying
+                            ? "w-[184px] justify-start py-2.5 pl-3 pr-4"
+                            : "w-10 justify-center p-0 sm:w-[184px] sm:justify-start sm:py-2.5 sm:pl-3 sm:pr-4"
+                    }`}
                 >
                     <span className="flex size-9 shrink-0 items-center justify-center rounded-full bg-neutral-950 text-white transition-transform duration-300 group-hover:scale-105">
                         {isPlaying ? <Pause className="size-4 fill-current" /> : <Play className="ml-0.5 size-4 fill-current" />}
                     </span>
-                    <span className="min-w-0 flex-1">
+                    <span className={`${isPlaying ? "block" : "hidden"} min-w-0 flex-1 sm:block`}>
                         <span className="flex items-center gap-1.5 text-[11px] font-semibold tracking-wide text-neutral-900">
                             {isPlaying ? "NOW PLAYING" : "PLAY MUSIC"}
                             {isPlaying && <Disc3 className="size-3 animate-spin text-neutral-400" style={{ animationDuration: "4s" }} />}
