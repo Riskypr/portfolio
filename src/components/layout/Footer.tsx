@@ -3,6 +3,7 @@
 import { ArrowUpRight } from "lucide-react";
 import { FaGithub, FaLinkedin } from "react-icons/fa";
 import { OPEN_CONTACT_PANEL_EVENT } from "@/src/constants/contact";
+import ScrollReveal from "@/src/components/react-bits/ScrollReveal";
 
 export default function Footer() {
     const year = new Date().getFullYear();
@@ -14,15 +15,17 @@ export default function Footer() {
     return (
         <footer id="contact" className="mt-32 overflow-hidden border-t border-neutral-800 bg-black text-white">
             <div className="mx-auto max-w-6xl px-6 pt-20 sm:pt-28">
-                <p className="text-[11px] font-medium uppercase tracking-[0.28em] text-neutral-500">
-                    Get in touch
-                </p>
-                <h2 className="mt-5 text-[clamp(2.5rem,6vw,5rem)] font-semibold leading-[0.94] tracking-[-0.065em]">
-                    <span className="block">Let&apos;s build</span>
-                    <span className="block text-neutral-500">something meaningful together.</span>
-                </h2>
+                <ScrollReveal duration={0.75} yOffset={28} enableBlur>
+                    <p className="text-[11px] font-medium uppercase tracking-[0.28em] text-neutral-500">
+                        Get in touch
+                    </p>
+                    <h2 className="mt-5 text-[clamp(2.5rem,6vw,5rem)] font-semibold leading-[0.94] tracking-[-0.065em]">
+                        <span className="block">Let&apos;s build</span>
+                        <span className="block text-neutral-500">something meaningful together.</span>
+                    </h2>
+                </ScrollReveal>
 
-                <div className="mt-16 grid grid-cols-1 gap-10 border-b border-neutral-800 pb-12 sm:grid-cols-2 lg:grid-cols-3 lg:gap-8">
+                <ScrollReveal className="mt-16 grid grid-cols-1 gap-10 border-b border-neutral-800 pb-12 sm:grid-cols-2 lg:grid-cols-3 lg:gap-8" delay={0.12} duration={0.75} yOffset={28} enableBlur>
                     <div>
                         <p className="text-sm font-medium text-neutral-500">Contact</p>
                         <button
@@ -69,9 +72,9 @@ export default function Footer() {
                             </a>
                         </div>
                     </div>
-                </div>
+                </ScrollReveal>
 
-                <div className="flex flex-col justify-between gap-6 py-8 sm:flex-row sm:items-end">
+                <ScrollReveal className="flex flex-col justify-between gap-6 py-8 sm:flex-row sm:items-end" delay={0.2} duration={0.7} yOffset={24} enableBlur>
                     <div>
                         <p className="text-sm text-neutral-500">Menu</p>
                         <nav aria-label="Footer" className="mt-3 flex flex-wrap gap-x-6 gap-y-2 text-sm font-medium">
@@ -81,13 +84,15 @@ export default function Footer() {
                         </nav>
                     </div>
                     <p className="text-sm text-neutral-500">Copyright {year} Risky Prasetyo</p>
-                </div>
+                </ScrollReveal>
 
-                <div aria-hidden="true" className="select-none overflow-hidden pb-6 pt-16 sm:pt-20">
-                    <span className="block whitespace-nowrap text-center text-[clamp(2rem,10vw,12rem)] font-semibold leading-[0.2] tracking-[-0.04em] text-white">
-                        RISKY PRASETYO
-                    </span>
-                </div>
+                <ScrollReveal delay={0.28} duration={0.8} yOffset={22} scale={0.985} enableBlur>
+                    <div aria-hidden="true" className="select-none overflow-hidden pb-6 pt-16 sm:pt-20">
+                        <span className="block whitespace-nowrap text-center text-[clamp(2rem,10vw,12rem)] font-semibold leading-[0.2] tracking-[-0.04em] text-white">
+                            RISKY PRASETYO
+                        </span>
+                    </div>
+                </ScrollReveal>
             </div>
         </footer>
     );

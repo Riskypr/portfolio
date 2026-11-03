@@ -2,6 +2,7 @@
 import { Metadata } from "next";
 import "./globals.css";
 import ContactPanel from "@/src/components/layout/ContactPanel";
+import BackToTopButton from "@/src/components/layout/BackToTopButton";
 
 export const metadata: Metadata = {
   title: "Risky Prasetyo | Portfolio",
@@ -26,6 +27,7 @@ export default function RootLayout({
       <body className="font-sans antialiased bg-white text-black">
         {children}
         <ContactPanel />
+        <BackToTopButton />
       </body>
     </html>
   );

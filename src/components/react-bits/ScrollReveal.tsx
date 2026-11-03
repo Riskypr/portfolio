@@ -19,6 +19,7 @@ interface ScrollRevealProps {
   delay?: number;
   duration?: number;
   threshold?: number;
+  once?: boolean;
   easing?: [number, number, number, number] | string; 
 }
 
@@ -35,12 +36,13 @@ export default function ScrollReveal({
   delay = 0,
   duration = 0.8,
   threshold = 0.15,
+  once = true,
   easing = [0.16, 1, 0.3, 1],
 }: ScrollRevealProps) {
   const ref = useRef(null);
   
   const isInView = useInView(ref, { 
-    once: false, 
+    once,
     amount: threshold 
   });
 
