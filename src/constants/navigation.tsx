@@ -37,5 +37,6 @@ export const NAV_ITEMS = [
     icon: <Mail className="w-3.5 h-3.5" />,
     label: "Contact",
     href: "#contact",
+    isContact: true,
   },
 ];
