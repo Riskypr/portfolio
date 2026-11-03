@@ -6,6 +6,7 @@ import { FaLinkedin, FaGithub } from "react-icons/fa";
 import { Compass, ChevronDown } from "lucide-react";
 import { AnimatePresence, motion } from "framer-motion";
 import { EXPERIENCES } from "@/src/constants/about";
+import ScrollReveal from "@/src/components/react-bits/ScrollReveal";
 
 type Experience = (typeof EXPERIENCES)[number];
 
@@ -39,7 +40,8 @@ export default function AboutSection() {
             <div className="grid grid-cols-1 md:grid-cols-12 gap-12 items-start">
 
                 {/* Left profile column */}
-                <div className="md:col-span-5 flex flex-col items-center md:items-start text-center md:text-left">
+                <ScrollReveal className="md:col-span-5" duration={0.8} yOffset={32} enableBlur>
+                <div className="flex flex-col items-center md:items-start text-center md:text-left">
                     <div className="relative w-full h-74 aspect-[4/5] max-w-[320px] mb-6 group overflow-hidden rounded-2xl border border-neutral-100 shadow-[0_4px_20px_rgba(0,0,0,0.02)]">
                         <img
                             src="/me.png"
@@ -71,9 +73,11 @@ export default function AboutSection() {
                     {/* <p className="text-xs font-semibold text-neutral-400 uppercase tracking-widest mt-1">Computer Systems Administration Assistant Intern at BPS</p> */}
                     <p className="text-[12px] font-medium text-neutral-400 tracking-widest mt-1 mb-8">Entry-Level Frontend Developer </p>
                 </div>
+                </ScrollReveal>
 
                 {/* Right information column */}
-                <div className="md:col-span-7 space-y-12 pt-2">
+                <ScrollReveal className="md:col-span-7" delay={0.12} duration={0.8} yOffset={32} enableBlur>
+                <div className="space-y-12 pt-2">
                     <div className="space-y-4">
                         <div className="flex items-center gap-2.5 text-black">
                             {/* <Compass className="w-4 h-4 shrink-0" /> */}
@@ -87,6 +91,7 @@ export default function AboutSection() {
                     </div>
 
                 </div>
+                </ScrollReveal>
 
                 {/* Experience follows About Me in the mobile grid; on desktop it occupies the left column below the profile. */}
                 <motion.div
@@ -94,6 +99,7 @@ export default function AboutSection() {
                     transition={{ layout: { duration: 0.38, ease: [0.22, 1, 0.36, 1] } }}
                     className="md:col-span-5"
                 >
+                    <ScrollReveal duration={0.8} delay={0.1} yOffset={28} enableBlur>
                     <div className="w-full max-w-[420px]">
                         <h3 className="mb-5 text-xl font-semibold tracking-tight text-neutral-900">My work history</h3>
 
@@ -168,9 +174,11 @@ export default function AboutSection() {
                             </motion.button>
                         </div>
                     </div>
+                    </ScrollReveal>
                 </motion.div>
 
-                <div className="hidden lg:block md:col-span-7 rounded-2xl border border-neutral-200 bg-neutral-50/70 p-6 lg:-translate-y-64">
+                <ScrollReveal className="hidden lg:block md:col-span-7" duration={0.8} delay={0.18} yOffset={28} enableBlur>
+                <div className="rounded-2xl border border-neutral-200 bg-neutral-50/70 p-6 lg:-translate-y-64">
                     <div className="mb-6 flex items-end justify-between gap-6">
                         <div>
                             <p className="text-[10px] font-semibold uppercase tracking-[0.22em] text-neutral-400">
@@ -203,6 +211,7 @@ export default function AboutSection() {
                         </div>
                     </div>
                 </div>
+                </ScrollReveal>
 
             </div>
         </section>

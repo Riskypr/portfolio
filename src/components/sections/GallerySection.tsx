@@ -1,6 +1,7 @@
 "use client";
 
 import React from "react";
+import ScrollReveal from "@/src/components/react-bits/ScrollReveal";
 
 interface GalleryItem {
   src: string;
@@ -13,7 +14,7 @@ interface GallerySectionProps {
 
 function GalleryCard({ src, tag }: GalleryItem) {
   return (
-    <div className="break-inside-avoid mb-4 group relative overflow-hidden rounded-2xl bg-neutral-100 border border-neutral-200/60">
+    <div className="group relative overflow-hidden rounded-2xl bg-neutral-100 border border-neutral-200/60">
       <img
         src={src}
         alt={tag}
@@ -31,7 +32,18 @@ export default function GallerySection({ items }: GallerySectionProps) {
     <section className="py-20 max-w-5xl mx-auto px-6 border-t border-neutral-100">
       <div className="columns-1 sm:columns-2 md:columns-3 gap-4 [column-fill:_balance] box-border">
         {items.map((item, index) => (
-          <GalleryCard key={index} src={item.src} tag={item.tag} />
+          <ScrollReveal
+            key={index}
+            className="mb-4 break-inside-avoid"
+            delay={index * 0.08}
+            duration={0.7}
+            yOffset={28}
+            scale={0.98}
+            enableBlur
+            threshold={0.12}
+          >
+            <GalleryCard src={item.src} tag={item.tag} />
+          </ScrollReveal>
         ))}
       </div>
     </section>
