@@ -1,6 +1,7 @@
 // src/app/layout.tsx
 import { Metadata } from "next";
 import "./globals.css";
+import ContactPanel from "@/src/components/layout/ContactPanel";
 
 export const metadata: Metadata = {
   title: "Risky Prasetyo | Portfolio",
@@ -24,6 +25,7 @@ export default function RootLayout({
       </head>
       <body className="font-sans antialiased bg-white text-black">
         {children}
+        <ContactPanel />
       </body>
     </html>
   );
