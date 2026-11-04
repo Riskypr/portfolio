@@ -101,7 +101,7 @@ export default function AboutSection() {
                 >
                     <ScrollReveal duration={0.8} delay={0.1} yOffset={28} enableBlur>
                     <div className="w-full max-w-[420px]">
-                        <h3 className="mb-5 text-xl font-semibold tracking-tight text-neutral-900">My work history</h3>
+                        <h3 className="mb-5 text-xl font-semibold tracking-tight text-neutral-900">My Experience</h3>
 
                         <motion.div layout transition={{ layout: { duration: 0.38, ease: [0.22, 1, 0.36, 1] } }}>
                             <AnimatePresence initial={false} mode="wait">
